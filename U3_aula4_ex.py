@@ -35,31 +35,31 @@ cursor.execute('''
 cursor.execute('''
     INSERT INTO vendas1 (data_venda, produto, categoria, valor_venda) VALUES
         ('2023-01-01', 'Produto A', 'Eletrônicos', 1500.00),
-('2023-01-05', 'Produto B', 'Roupas', 350.00),
-('2023-02-10', 'Produto C', 'Eletrônicos', 1200.00),
-('2023-03-15', 'Produto D', 'Livros', 200.00),
-('2023-03-20', 'Produto E', 'Eletrônicos', 800.00),
-('2023-04-02', 'Produto F', 'Roupas', 400.00),
-('2023-05-05', 'Produto G', 'Livros', 150.00),
-('2023-06-10', 'Produto H', 'Eletrônicos', 1000.00),
-('2023-07-20', 'Produto I', 'Roupas', 600.00),
-('2023-08-25', 'Produto J', 'Eletrônicos', 700.00),
-('2023-09-30', 'Produto K', 'Livros', 300.00),('2023-03-20', 'Produto E', 'Eletrônicos', 800.00),
-('2023-04-02', 'Produto F', 'Roupas', 400.00),
-('2023-05-05', 'Produto G', 'Livros', 150.00),
-('2023-06-10', 'Produto H', 'Eletrônicos', 1000.00),
-('2023-07-20', 'Produto I', 'Roupas', 600.00),
-('2023-08-25', 'Produto J', 'Eletrônicos', 700.00),
-('2023-09-30', 'Produto K', 'Livros', 300.00),('2023-03-20', 'Produto E', 'Eletrônicos', 800.00),
-('2023-04-02', 'Produto F', 'Roupas', 400.00),
-('2023-05-05', 'Produto G', 'Livros', 150.00),
-('2023-06-10', 'Produto H', 'Eletrônicos', 1000.00),
-('2023-07-20', 'Produto I', 'Roupas', 600.00),
-('2023-08-25', 'Produto J', 'Eletrônicos', 700.00),
-('2023-09-30', 'Produto K', 'Livros', 300.00),
-('2023-10-05', 'Produto L', 'Roupas', 450.00),
-('2023-11-15', 'Produto M', 'Eletrônicos', 900.00),
-('2023-12-20', 'Produto N', 'Livros', 250.00);
+    ('2023-01-05', 'Produto B', 'Roupas', 350.00),
+    ('2023-02-10', 'Produto C', 'Eletrônicos', 1200.00),
+    ('2023-03-15', 'Produto D', 'Livros', 200.00),
+    ('2023-03-20', 'Produto E', 'Eletrônicos', 800.00),
+    ('2023-04-02', 'Produto F', 'Roupas', 400.00),
+    ('2023-05-05', 'Produto G', 'Livros', 150.00),
+    ('2023-06-10', 'Produto H', 'Eletrônicos', 1000.00),
+    ('2023-07-20', 'Produto I', 'Roupas', 600.00),
+    ('2023-08-25', 'Produto J', 'Eletrônicos', 700.00),
+    ('2023-09-30', 'Produto K', 'Livros', 300.00),('2023-03-20', 'Produto E', 'Eletrônicos', 800.00),
+    ('2023-04-02', 'Produto F', 'Roupas', 400.00),
+    ('2023-05-05', 'Produto G', 'Livros', 150.00),
+    ('2023-06-10', 'Produto H', 'Eletrônicos', 1000.00),
+    ('2023-07-20', 'Produto I', 'Roupas', 600.00),
+    ('2023-08-25', 'Produto J', 'Eletrônicos', 700.00),
+    ('2023-09-30', 'Produto K', 'Livros', 300.00),('2023-03-20', 'Produto E', 'Eletrônicos', 800.00),
+    ('2023-04-02', 'Produto F', 'Roupas', 400.00),
+    ('2023-05-05', 'Produto G', 'Livros', 150.00),
+    ('2023-06-10', 'Produto H', 'Eletrônicos', 1000.00),
+    ('2023-07-20', 'Produto I', 'Roupas', 600.00),
+    ('2023-08-25', 'Produto J', 'Eletrônicos', 700.00),
+    ('2023-09-30', 'Produto K', 'Livros', 300.00),
+    ('2023-10-05', 'Produto L', 'Roupas', 450.00),
+    ('2023-11-15', 'Produto M', 'Eletrônicos', 900.00),
+    ('2023-12-20', 'Produto N', 'Livros', 250.00);
 ''')
 
 
@@ -113,23 +113,22 @@ print("\n \n \033[91mPrimeiros registros:\033[0m")
 print(df_vendas.head(10))
 time.sleep(1)
 
-display(HTML("<h3 style='color: green;'>Primeiros registros:</h3>"))
-# Informações dos dados (ex: qtd colunas, qtd de itens, tipo: str float, int) e se tem algum dado vazio
+# Informações dos dados 
+# (ex: qtd colunas, qtd de itens, tipo: str float, int) 
+# E se tem algum dado vazio
 print("\n \n \033[91mInformações dos dados:\033[0m")
 df_vendas.info()
 time.sleep(1)
 
 
-# Verificar se tem algum dado faltando na tabela (ex: preço, data_da_venda), retorna a qtd de celulas vazias
+# Verificar se tem algum dado faltando na tabela 
+# (ex: preço, data_da_venda), retorna a qtd de celulas vazias
 print("\n \n \033[91mValores vazios:\033[0m")
 print(df_vendas.isnull().sum())
 
 
-# Converter a coluna de data para o formato de data
-df_vendas['data_venda'] = pd.to_datetime(df_vendas['data_venda'])
-
 # Mostrar algumas estatísticas das vendas
-print("\nEstatísticas das vendas:")
+print("\n \033[91mEstatísticas das vendas:\033[0m")
 print(df_vendas['valor_venda'].describe().round(2))
 
 
@@ -137,6 +136,9 @@ print(df_vendas['valor_venda'].describe().round(2))
 # ==========================================
 # PASSO 3 - Analise de DADOS individuais
 # ==========================================
+
+# Converter a coluna de data para o formato de data
+df_vendas['data_venda'] = pd.to_datetime(df_vendas['data_venda'])
 
 #Total das vendas
 print("\n \n \033[91mTotal de vendas:\033[0m")
@@ -156,8 +158,10 @@ print(df_vendas['valor_venda'].max().round(2))
 
 
 
-#Total de vendas por categoria              O groupby() significa "agrupe todos q forem igual" e o sum() significa "some todos os valores de cada grupo"
-print("\n \n \033[91mTotal de vendas por categoria:\033[0m")        
+#Total de vendas por categoria             
+# O groupby() significa "agrupe todos q forem igual"
+# o sum() significa "some todos os valores de cada grupo"
+print("\n \n \033[91mValor arrecadado por categoria:\033[0m")        
 vendas_por_categoria = df_vendas.groupby('categoria')['valor_venda'].sum().round(2).reset_index(name='Total')
 print(vendas_por_categoria.to_string(index=False))
 
@@ -179,11 +183,11 @@ df_vendas['data_venda'] = pd.to_datetime(df_vendas['data_venda'])
 # PASSO 4 - VISUALIZAÇÃO DOS GRAFICOS
 # ==========================================
 
-#1 VENDAS POR CATEGORIA
 plt.figure(figsize=(12, 6)) #TAMANHO DO GRAFICO
 plt.subplot(2, 2, 1) # tamanho da tela que vai ser dividido em 4 partes
 
 
+#1 VENDAS POR CATEGORIA
 # Cria o gráfico de barras
 sns.barplot(
     data = vendas_por_categoria,
@@ -205,7 +209,8 @@ for i, valor in enumerate(vendas_por_categoria['Total']):
     plt.text(i, valor, f'R$ {valor:.0f}', ha='center', va='bottom')
 
 maximo_valor = int(vendas_por_categoria['Total'].max())
-plt.yticks(range(0, maximo_valor + 500, maximo_valor // 5))  # Ajusta os ticks do eixo Y para melhor visualização    
+plt.ylim(0, maximo_valor + 1000)
+plt.yticks(range(0, maximo_valor + 1000, 1000))
 
 # Grade horizontal
 plt.grid(axis='y', alpha=0.3)
@@ -230,8 +235,10 @@ for x, y in zip(df_vendas['data_venda'], df_vendas['valor_venda']):
 plt.title('Total de vendas por tempo')
 plt.xlabel('Data da Venda')
 plt.ylabel('Total de vendas (R$)')
+
 # Limita o eixo Y para melhor visualização
 plt.ylim(0, 2000)
+
 # Grade horizontal
 plt.grid(axis='y', alpha=0.3)
 
@@ -262,7 +269,7 @@ sns.barplot(
 )
 
 #Faz a altura do grafico ser automatica com o maior valor da coluna quantidade
-plt.yticks(range(0, quantidade_por_categoria['Quantidade'].max() + 1))
+plt.yticks(range(0, quantidade_por_categoria['Quantidade'].max() + 5, 5))
 
 plt.title('Quantidade Itens de cada categoria')
 plt.xlabel('CATEGORIA')
